@@ -1,0 +1,10 @@
+body {
+	background-color: #222;
+	color:#ddd;
+}
+
+#quote {
+	width:40%;
+	margin:20px auto;
+	font-size: 2rem;
+}
