@@ -70,7 +70,9 @@ $(document).ready(function() {
     }
     $('.container').css('background', "#333 url('http://dev.lawlietblack.com/img/" + tempName + ".png') no-repeat fixed center");
   }
+  
   getLocation(); 
+
   $("#change-temp").click(function() {
     var temp = $('#temp').attr("data-temp");
     var tempCel = Math.round(temp - 272.15);
@@ -90,5 +92,10 @@ $(document).ready(function() {
     $.getJSON(url, function(data) {
       renderPage(data);
     });
+  });
+  $('#zip').bind('keypress', function(e) {
+    if(e.keyCode==13){
+      alert("enter pressed!")
+    }
   });
 });
