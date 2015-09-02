@@ -1,0 +1,43 @@
+body {
+  background-color: #222;
+  color:#ddd;
+}
+#stopWatch {
+  border:2px solid #444;
+  border-radius:50%;
+  height:200px;
+  width:200px;
+  margin:20px auto;
+  padding:20px;
+  cursor:pointer;
+}
+#stopWatch.session.running {
+  border: 2px solid #464;
+  color: #7d7;
+}
+#stopWatch.break.running {
+  border: 2px solid #166;
+  color: #28E8EA;
+}
+#options {
+  height:100px;
+  width:460px;
+  margin:auto;
+}
+#options .option {
+
+  height:100px;
+  width:160px;
+  padding:10px;
+}
+#sessTime, #brkTime {
+  display:inline;
+  padding:20px;
+  font-size: 1.8rem;
+}
+#resetContainer {
+  width:100px;
+  margin:auto;
+  display:inline-block;
+  margin-top:60px;
+}
