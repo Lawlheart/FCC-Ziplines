@@ -1,0 +1,11 @@
+body {
+	background-color: #222;
+	color:#ddd;
+}
+.container {
+  margin-top: 40px;
+}
+.form-group input {
+  display: inline;
+  width:200px;
+}
