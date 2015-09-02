@@ -1,8 +1,8 @@
-// $(document).ready(function() { 
+$(document).ready(function() { 
 var clockRunning = false;
 var timeLeft;
-var sessionTime = 5;
-var breakTime = 5;
+var sessionTime = 1500;
+var breakTime = 300;
 var seconds = sessionTime; // 1500 seconds for 25 minutes
 var breakClock = false;
 
@@ -15,15 +15,28 @@ function filterTime(seconds) {
     return min + ":" + sec;
   }
 }
+function renderBackground() {
+  var color = '#444'
+  var timer = breakClock?breakTime:sessionTime;
+  if(clockRunning) {
+    color = breakClock?'#166':'#464';
+  }
+  var progress = (timer - seconds)*100/timer;
+  $('#stopWatch').css('background', 'linear-gradient(to top, '+color+' 0%,'+color+' '+progress+'%,#222 '+progress+'%,#222 100%)');
+}
 function timer() {
   if(seconds > 0) {
     seconds -= 1;
+    if(seconds === 0) {
+      document.getElementById('alarm').play();
+    }
   } else {
     if(!breakClock) {
       seconds = breakTime;
       $('#title').html("Break");
       $('#stopWatch').removeClass('session');
       $('#stopWatch').addClass('break');
+
       breakClock = true;
     } else {
       seconds = sessionTime;
@@ -33,6 +46,7 @@ function timer() {
       breakClock = false;
     }
   }
+  renderBackground()
   $('#time').html(filterTime(seconds));
 }
 
@@ -51,6 +65,7 @@ $('#stopWatch').click(function() {
     clockRunning = false;
     $(this).removeClass('running');
   }
+  renderBackground()
 });
 
 $('#reset').click(function() {
@@ -60,6 +75,7 @@ $('#reset').click(function() {
   $('#stopWatch').removeClass('break');
   $('#time').html(filterTime(seconds));
   breakClock = false;
+  renderBackground()
 });
 
 
@@ -96,4 +112,4 @@ $('#subBrkTime').click(function() {
   }
 });
 
-// });
+});
