@@ -1,63 +1,25 @@
 $(document).ready(function() { 
   function getIcons(icon) {
     switch(icon) {
-      case "01d":
-        return "day-sunny";
-        break;
-      case "02d":
-        return "day-cloudy";
-        break;
-      case "03d":
-        return "cloud";
-        break;
-      case "04d":
-        return "cloudy";
-        break;
-      case "09d":
-        return "showers";
-        break;
-      case "10d":
-        return "day-rain";
-        break;
-      case "11d":
-        return "thunderstorm";
-        break;
-      case "13d":
-        return "snow";
-        break;
-      case "50d":
-        return "fog";
-        break;
-      case "01n":
-        return "night-clear";
-        break;
-      case "02n":
-        return "night-alt-cloudy";
-        break;
-      case "03n":
-        return "cloud";
-        break;
-      case "04n":
-        return "cloudy";
-        break;
-      case "09n":
-        return "showers";
-        break;
-      case "10n":
-        return "night-alt-rain";
-        break;
-      case "11n":
-        return "thunderstorm";
-        break;
-      case "13n":
-        return "snow";
-        break;
-      case "50n":
-        return "fog";
-        break;
-      default:
-        return "alien";
-        break;
+      case "01d": return "day-sunny";
+      case "02d": return "day-cloudy";
+      case "03d": return "cloud";
+      case "04d": return "cloudy";
+      case "09d": return "showers";
+      case "10d": return "day-rain";
+      case "11d": return "thunderstorm";
+      case "13d": return "snow";
+      case "50d": return "fog";
+      case "01n": return "night-clear";
+      case "02n": return "night-alt-cloudy";
+      case "03n": return "cloud";
+      case "04n": return "cloudy";
+      case "09n": return "showers";
+      case "10n": return "night-alt-rain";
+      case "11n": return "thunderstorm";
+      case "13n": return "snow";
+      case "50n": return "fog";
+      default: return "alien";
       }
     }
   function getLocation() {
@@ -71,26 +33,42 @@ $(document).ready(function() {
     if(position.coords.latitude !== undefined && position.coords.longitude !== undefined) {
       getWeather(position.coords.latitude, position.coords.longitude);
     } else {
-      alert("weather not loading...")
+      alert("weather not loading...");
     }
   }
   function getWeather(lat, lon) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon;
     $.getJSON(url, function(data) {
-      renderPage(data)
-    })
+      renderPage(data);
+    });
   }
   function renderPage(data) {
     var tempCel = Math.round(data.main.temp - 272.15);
-    $('#location').html(data.name)
+    $('#location').html(data.name);
     $('#temp').attr("data-temp", data.main.temp).attr("temp-type", "cel");
     $('#temp').html(tempCel + "&#8451;");
-    var iconString = ""
+    renderBackground(tempCel);
+    var iconString = "";
     for(var i=0;i<data.weather.length;i++) {
       iconString += "<i class='wi wi-" + getIcons(data.weather[i].icon) + "'></i>";
     }
     $('#weather-icons').html(iconString);
     console.log(data); 
+  }
+  function renderBackground(temp) {
+    //cutoffs at 15 and 32 degrees celsius
+    var imageUrl;
+    if(temp >= 32) {
+      //hot background
+      tempName = 'hot';
+    } else if(temp >15) {
+      //warm background
+      tempName = 'warm';
+    } else if(temp <=15) {
+      //cold background
+      tempName = 'cold';
+    }
+    $('.container').css('background', "#333 url('http://dev.lawlietblack.com/img/" + tempName + ".png') no-repeat fixed center");
   }
   getLocation(); 
   $("#change-temp").click(function() {
@@ -105,12 +83,12 @@ $(document).ready(function() {
       $('#temp').html(tempCel + '&#8451;').attr('temp-type', 'cel');
       $(this).html('Switch to &#8457;');
     }
-  })
+  });
   $('#getWeather').click(function() {
     var zip = $('#zip').val();
     var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us";
     $.getJSON(url, function(data) {
-      renderPage(data)
+      renderPage(data);
     });
   });
 });
