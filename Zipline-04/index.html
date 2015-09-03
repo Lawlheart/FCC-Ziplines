@@ -15,9 +15,13 @@
       <div class="option pull-left">
         <div class="text-center">
           <h4>Session Length</h4>
-          <button class="btn btn-xs btn-danger"><i class="fa fa-minus"id="subSessTime"></i></button>
+          <button class="btn btn-xs btn-danger time-select" data-method="sub-sess">
+            <i class="fa fa-minus" data-method="sub-sess"></i>
+          </button>
           <p id="sessTime"></p>
-          <button class="btn btn-xs btn-info" id="addSessTime"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-xs btn-info time-select" data-method="add-sess">
+            <i class="fa fa-plus" data-method="add-sess"></i>
+          </button>
         </div>
       </div>
       <div class="text-center" id="resetContainer">
@@ -26,9 +30,13 @@
       <div class="option pull-right">
        <div class="text-center">
           <h4>Break Length</h4>
-          <button class="btn btn-xs btn-danger"><i class="fa fa-minus"id="subBrkTime"></i></button>
+          <button class="btn btn-xs btn-danger time-select" data-method="sub-break">
+            <i class="fa fa-minus" data-method="sub-break"></i>
+          </button>
           <p id="brkTime"></p>
-          <button class="btn btn-xs btn-info" id="addBrkTime"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-xs btn-info time-select" data-method="add-break">
+            <i class="fa fa-plus" data-method="add-break"></i>
+          </button>
         </div>
       </div>
     </div>
