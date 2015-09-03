@@ -4,7 +4,7 @@ var timeLeft;
 var sessionTime = 1500;
 var breakTime = 300;
 var breakClock = false;
-var seconds;
+var seconds = sessionTime;
 
 //Converts seconds to MM:SS
 function filterTime(seconds) {
@@ -49,16 +49,11 @@ function timer() {
   renderBackground()
   $('#time').html(filterTime(seconds));
 }
-//renders time variables in the view with respect to break/session mode;
-function renderTime() {
-  seconds = breakClock?breakTime:sessionTime;
-  $('#time').html(filterTime(seconds));
-  $('#sessTime').html(Math.floor(seconds/60));
-  $('#brkTime').html(Math.floor(breakTime/60));
-}
+//Initial page render
+$('#time').html(filterTime(seconds));
+$('#sessTime').html(Math.floor(seconds/60));
+$('#brkTime').html(Math.floor(breakTime/60));
 
-//Initial page rendering
-renderTime()
 
 //add play/pause functionality to the stopwatch button
 $('#stopWatch').click(function() {
@@ -81,6 +76,9 @@ $('#reset').click(function() {
   $('#stopWatch').addClass('session').removeClass('break');
   $('#time').html(filterTime(seconds));
   breakClock = false;
+  clearInterval(timeLeft);
+  clockRunning = false;
+  $('#stopWatch').removeClass('running');
   renderBackground()
 });
 
@@ -89,11 +87,17 @@ $('body').on('click', '.time-select', function(e) {
   var method = e.target.getAttribute("data-method");
   switch(method) {
     case "add-sess": sessionTime += 60; break;
-    case "sub-sess": sessionTime -= 60; break;
+    case "sub-sess": sessionTime = sessionTime <= 60 ? 0 :sessionTime - 60;  break;
     case "add-break": breakTime += 60; break;
-    case "sub-break": breakTime -= 60; break;
+    case "sub-break": breakTime = breakTime <= 60 ? 0 : breakTime - 60; break;
   }
-  renderTime()
+  //sets seconds to the appropriate value
+  if( (breakClock && (method.indexOf("break") >= 0)) || (!breakClock && method.indexOf("sess") >= 0)) {
+    seconds = breakClock ? breakTime : sessionTime;
+    $('#time').html(filterTime(seconds));
+  }
+  $('#sessTime').html(Math.floor(sessionTime/60));
+  $('#brkTime').html(Math.floor(breakTime/60));
 
 });
 
