@@ -43,3 +43,21 @@ main {
 .down {
   background-color: red;
 }
+.sort {
+  width:32.85%;
+  height:30px;
+  font-weight: bold;
+  background-color: #444;
+  border:0px;
+  margin:0;
+  padding:0;
+}
+#search {
+  width:100%;
+  margin:4px 0;
+  border:0px;
+  height:30px;
+  background-color: #000;
+  padding:10px;
+  font-weight: bold;
+}
