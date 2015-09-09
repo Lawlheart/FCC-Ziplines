@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="CamperNewsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Zipline:  Stylize Stories on Camper News</title> 
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="MainController">
+<main>
+  <div class="container-fluid">
+    <div class="title text-center">
+      <h1>Camper News</h1>
+      <h2>FreeCodeCamp</h2>
+    </div>
+    <div id="news" class="row">
+      <camper-story ng-repeat="story in news" story="story"></camper-story>
+    </div>
+  </div>
+</main>
+  <script src='js/jquery/jquery.min.js'></script>
+  <script src="js/angularjs/angular.min.js"></script>
+  <script src="js/app.js"></script> 
+</body>
+</html>

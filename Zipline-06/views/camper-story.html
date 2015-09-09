@@ -1,0 +1,7 @@
+<div class="story" ng-click="newsRedirect(story.link)">
+	<div class="image-container" style="background: #666 url('{{story.image}}') no-repeat center; background-size: cover">
+	  <img ng-src="{{story.author.picture}}" alt="" class="avatar">
+  </div>
+  <h4 class="headline">{{story.headline}}</h4>
+  <div class="upvotes text-center"><p>+&nbsp;{{story.upVotes.length}}</p></div>
+</div>
