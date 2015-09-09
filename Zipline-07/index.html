@@ -9,19 +9,22 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainController">
-<main class="container-fluid text-center">
-  <h1>Wikipedia Viewer</h1>
-  <form class="form-group form" ng-submit="getWiki(search)">
-    <input type="text" ng-model="search" class="form-control" placeholder="Search">
-  </form>
+<main class="container-fluid">
+  <div class="title text-center">
+    <h1>Wikipedia Viewer</h1>    
+    <form class="form-group form" ng-submit="getWiki(search)">
+      <input type="text" ng-model="search" class="form-control" placeholder="Search" id="search" wiki-autocomplete info="searchScope">
+    </form>
+    <button class="btn btn-primary" ng-click="random()">Go to a Random Page</button>
+  </div>
   <section>
-    <div class="page" ng-repeat="page in pages">
-      <h1>{{page.title}}</h1>
-    </div>
+    <wiki-story ng-repeat="page in pages" page="page"></wiki-story>
   </section>
 </main>
   <script src='js/jquery/jquery.min.js'></script>
+  <script src='js/jquery/jquery-ui.min.js'></script>
   <script src="js/angularjs/angular.min.js"></script>
+  <script src="js/angularjs/angular-sanitize.min.js"></script>
   <script src="js/app.js"></script> 
 </body>
 </html>

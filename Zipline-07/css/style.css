@@ -7,11 +7,35 @@ body {
   color:#ddd;
 }
 main {
-  width:60%;
+  width:90%;
   margin:auto;
 }
-input.form-control {
+input.form-control, .ui-autocomplete {
   background-color: #000;
   border:0;
   color:#ddd;
+  list-style: none;
+  width:500px;
+}
+#search {
+  margin:auto;
+}
+.page {
+  height:120px;
+  background-color: #444;
+  padding:10px;
+  margin:10px;
+  cursor:pointer;
+}
+.page h3 {
+  margin-top:0;
+}
+.ui-helper-hidden-accessible { 
+  display:none; 
+}
+.ui-state-focus {
+  background-color:#337ab7;
+}
+.ui-autocomplete {
+  padding:10px;
 }
