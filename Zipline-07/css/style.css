@@ -1,0 +1,17 @@
+* {
+  box-sizing:border-box;
+}
+
+body {
+  background-color: #222;
+  color:#ddd;
+}
+main {
+  width:60%;
+  margin:auto;
+}
+input.form-control {
+  background-color: #000;
+  border:0;
+  color:#ddd;
+}

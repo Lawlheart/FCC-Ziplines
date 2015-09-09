@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="CamperNewsApp">
+<html ng-app="WikiFeedApp">
 <head>
   <meta charset="UTF-8">
   <title>Zipline:  Stylize Stories on Camper News</title> 
@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainController">
-<main>
-  <div class="container-fluid">
-    <div class="title text-center">
-      <h1>Camper News</h1>
-      <h2>FreeCodeCamp</h2>
+<main class="container-fluid text-center">
+  <h1>Wikipedia Viewer</h1>
+  <form class="form-group form" ng-submit="getWiki(search)">
+    <input type="text" ng-model="search" class="form-control" placeholder="Search">
+  </form>
+  <section>
+    <div class="page" ng-repeat="page in pages">
+      <h1>{{page.title}}</h1>
     </div>
-    <div id="news" class="row">
-      <camper-story ng-repeat="story in news" story="story"></camper-story>
-    </div>
-  </div>
+  </section>
 </main>
   <script src='js/jquery/jquery.min.js'></script>
   <script src="js/angularjs/angular.min.js"></script>

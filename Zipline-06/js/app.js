@@ -29,9 +29,19 @@
         if($scope.story.image.indexOf('http') < 0) {
           $scope.story.image = "https://pbs.twimg.com/profile_images/562385977390272512/AK29YaTf_reasonably_small.png";
         }
+
         $scope.newsRedirect = function(url) {
           window.location.href = url;
         }
+      },
+      link: function($scope, $element, $attrs) {
+        $element.hover(function() {
+          $element.addClass('animated pulse');
+        }, function() {
+          window.setTimeout( function(){
+            $element.removeClass('animated pulse');
+            }, 1000); 
+        })
       }
     }
   })
