@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="CalculatorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Zipline: Build a JavaScript Calculator</title> 
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="container-fluid" ng-controller="MainController">
+  <div class="title text-center">
+    <h1>Calculator</h1>
+  </div>
+  <div id="calculator">
+    <div id="output"><span id="running">{{running}}<br></span>{{output}}</div>
+    <div id="buttons" class="text-center">
+      <button ng-click="clearAll()" class="btn btn-primary calc-fn">AC</button>
+      <button ng-click="clearEntry()" class="btn btn-primary calc-fn">CE</button>
+      <button ng-click="mathClick('%')" class="btn btn-primary">&percnt;</button>
+      <button ng-click="mathClick('/')" class="btn btn-primary">&divide;</button>
+      <button ng-click="numClick(7)" class="btn btn-primary">7</button>
+      <button ng-click="numClick(8)" class="btn btn-primary">8</button>
+      <button ng-click="numClick(9)" class="btn btn-primary">9</button>
+      <button ng-click="mathClick('*')" class="btn btn-primary">x</button>
+      <button ng-click="numClick(4)" class="btn btn-primary">4</button>
+      <button ng-click="numClick(5)" class="btn btn-primary">5</button>
+      <button ng-click="numClick(6)" class="btn btn-primary">6</button>
+      <button ng-click="mathClick('-')" class="btn btn-primary">-</button>
+      <button ng-click="numClick(1)" class="btn btn-primary">1</button>
+      <button ng-click="numClick(2)" class="btn btn-primary">2</button>
+      <button ng-click="numClick(3)" class="btn btn-primary">3</button>
+      <button ng-click="mathClick('+')" class="btn btn-primary tall">+</button>
+      <button ng-click="numClick(0)" class="btn btn-primary">0</button>
+      <button ng-click="decimalClick()" class="btn btn-primary">.</button>
+      <button ng-click="evaluate()" class="btn btn-primary">=</button>
+
+    </div>
+  </div>
+
+</main>
+  <script src='js/jquery/jquery.min.js'></script>
+  <script src='js/jquery/jquery-ui.min.js'></script>
+  <script src="js/angularjs/angular.min.js"></script>
+  <script src="js/mathjs/math.min.js"></script>
+  <script src="js/app.js"></script> 
+</body>
+</html>
