@@ -10,10 +10,10 @@
 </head>
 <body>
 <main class="text-center"ng-controller="MainController">
- <div ng-click="choose('green')" class="ring ring-green"></div>
- <div ng-click="choose('red')" class="ring ring-red"></div>
- <div ng-click="choose('blue')" class="ring ring-blue"></div>
- <div ng-click="choose('yellow')" class="ring ring-yellow"></div>
+ <div ng-click="!playing && choose('green')" class="ring ring-green"></div>
+ <div ng-click="!playing && choose('red')" class="ring ring-red"></div>
+ <div ng-click="!playing && choose('blue')" class="ring ring-blue"></div>
+ <div ng-click="!playing && choose('yellow')" class="ring ring-yellow"></div>
   <div id="interface" class="text-center">
     <label>Count</label>
     <div id="output" ng-model="output">{{output}}</div>

@@ -13,8 +13,10 @@ angular.module('SimonApp', [])
   $scope.yellow.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
   $scope.strict = false;
+  $scope.playing = true;
 
   $scope.choose = function(color) {
+    console.log("CLICK")
     $scope.guess.push(color);
     $scope.flash(color);
     var lastColor = $scope.guess.length - 1;
@@ -54,11 +56,13 @@ angular.module('SimonApp', [])
 
   $scope.playSequence = function() {
     var seq = 0;
+    $scope.playing = true;
     var simonSequence = window.setInterval(function() {
       var color = $scope.sequence[seq];
       $scope.flash(color);
       seq ++
       if(seq === $scope.sequence.length) {
+        $scope.playing = false;
         window.clearInterval(simonSequence);
       }
     }, $scope.timer);
