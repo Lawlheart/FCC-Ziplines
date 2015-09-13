@@ -16,7 +16,7 @@
  <div ng-click="choose('yellow')" class="ring ring-yellow"></div>
   <div id="interface" class="text-center">
     <label>Count</label>
-    <div id="output">{{output}}</div>
+    <div id="output" ng-model="output">{{output}}</div>
     <button ng-click="start()" class="btn btn-primary">Start</button><button ng-click="toggleStrict()" class="btn btn-danger">Strict</button>
   </div>
   <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" id="greenSound"></audio>

@@ -12,26 +12,26 @@ angular.module('SimonApp', [])
   $scope.yellow = document.createElement("AUDIO");
   $scope.yellow.setAttribute('src', 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
 
-
   $scope.strict = false;
-  
+
   $scope.choose = function(color) {
     $scope.guess.push(color);
-    $scope[color].play();
-    console.log($scope.guess)
+    $scope.flash(color);
     var lastColor = $scope.guess.length - 1;
-    if($scope.guess[lastColor] === $scope.sequence[lastColor]) {
-      console.log("correct")
-      if($scope.guess.length === $scope.sequence.length) {
-        $scope.advance();
-      } 
-    } else {
-      console.log("incorrect");
-      $scope.guess = [];
+    var correct = $scope.guess[lastColor] === $scope.sequence[lastColor];
+    var lastGuess = $scope.guess.length === $scope.sequence.length;
+    var turn20 = $scope.guess.length === 20;
+    if(correct && lastGuess && turn20) {
+      $scope.victory();
+    } else if(correct && lastGuess) {
+      $scope.advance();
+    } else if(!correct) {
+      $scope.wrong();
     }
   }
   
   $scope.start = function() {
+    $scope.timer = 1000;
     $scope.output = 0;
     $scope.sequence = [];
     $scope.guess = [];
@@ -40,10 +40,15 @@ angular.module('SimonApp', [])
 
   $scope.advance = function() {
     var colors = ['green','red','blue','yellow'];
+    var tempo = [5,9,13]
     $scope.output += 1;
     $scope.sequence.push(colors[Math.floor(Math.random()*4)]);
-    $scope.playSequence();
+    if(tempo.indexOf($scope.output) >=0) {
+      $scope.timer *= 0.85;
+      console.log("timer increased to " + $scope.timer)
+    }
     $scope.guess = [];
+    $scope.playSequence();
     console.log($scope.sequence)
   }
 
@@ -51,13 +56,14 @@ angular.module('SimonApp', [])
     var seq = 0;
     var simonSequence = window.setInterval(function() {
       var color = $scope.sequence[seq];
-      $scope[color].play();
+      $scope.flash(color);
       seq ++
       if(seq === $scope.sequence.length) {
         window.clearInterval(simonSequence);
       }
-    }, 1000);
+    }, $scope.timer);
   }
+
   $scope.toggleStrict = function() {
     if(!$scope.strict) {
       $scope.strict = true;
@@ -67,9 +73,36 @@ angular.module('SimonApp', [])
       $('#output').removeClass('strict');
     }
     $scope.start();
-
-    console.log($scope.strict)
   }
+
+  $scope.flash = function(color) {
+    var tag = ".ring-" + color;
+    $(tag).addClass('active');
+    window.setTimeout(function(){$(tag).removeClass('active')}, $scope.timer/2);
+    $scope[color].play();
+  }
+
+  $scope.wrong = function() {
+    $scope.output = "! ! !";
+    window.setTimeout(function() {
+      $scope.output = $scope.sequence.length;
+      if($scope.strict) {
+        $scope.start(); 
+      } else {
+        $scope.guess = [];
+        $scope.playSequence();
+      }
+      $scope.$digest();
+    }, 1000);
+  }
+  $scope.victory = function() {
+    $scope.output = "Victory!";
+    window.setTimeout(function() {
+      $scope.start();
+      $scope.$digest();
+    }, 1000);
+  }
+
 }]);
 
 $(document).ready(function() { 
