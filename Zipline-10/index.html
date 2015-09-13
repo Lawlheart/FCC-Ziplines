@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="SimonApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Zipline: Build a JavaScript Calculator</title> 
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="text-center"ng-controller="MainController">
+ <div ng-click="choose('green')" class="ring ring-green"></div>
+ <div ng-click="choose('red')" class="ring ring-red"></div>
+ <div ng-click="choose('blue')" class="ring ring-blue"></div>
+ <div ng-click="choose('yellow')" class="ring ring-yellow"></div>
+  <div id="interface" class="text-center">
+    <label>Count</label>
+    <div id="output">{{output}}</div>
+    <button ng-click="start()" class="btn btn-primary">Start</button><button ng-click="toggleStrict()" class="btn btn-danger">Strict</button>
+  </div>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" id="greenSound"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" id="redSound"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" id="blueSound"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" id="yellowSound"></audio>
+</main>
+  <script src='js/jquery/jquery.min.js'></script>
+  <script src='js/jquery/jquery-ui.min.js'></script>
+  <script src="js/angularjs/angular.min.js"></script>
+  <script src="js/app.js"></script> 
+</body>
+</html>
