@@ -1,7 +1,7 @@
 # FreeCodeCamp Ziplines
 ##### Front End Web Development Projects by Kenneth Black
 
-These are Front End Development Projects that I've built as part of the FreeCodeCamp curriculum. Since I completed them, the order and user stories may have changed. The user stories here reflect the parameters I built my app within.
+These are Front End Development Projects that I've built as part of the FreeCodeCamp curriculum. Since I completed them, the order and user stories may have changed. The user stories here reflect the parameters I built my app within. Bonfires have moved to [https://github.com/LawlietBlack/algorithms](https://github.com/LawlietBlack/algorithms) under JavaScript.
 
 ### Skills Used
 
