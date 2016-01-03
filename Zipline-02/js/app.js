@@ -1,14 +1,20 @@
 $(document).ready(function() { 
-	//gets quotes from my own API, https://github.com/LawlietBlack/quotes-api
+  var quotesData
+  $.getJSON('./js/quotes.json', function(data) {
+    quotesData = data;
+  });
+
+  function renderRandomQuote() {
+    var random = Math.floor(Math.random()*101);
+    var quote = quotesData[random]
+    $('#quote').html(" ");
+    var $author = $('<h1 class="text-center" id="text">').html(quote.text);
+    var $text = $('<h3 class="text-center" id="author">').html(" - " + quote.author);
+    $('#quote').append($author).append($text);
+  };
+
 	$('#get-quotes').click(function(event) {
-		console.log(event)
-		function callback(data) {
-			$('#quote').html(" ");
-			var $author = $('<h1 class="text-center" id="author">').html(data.author);
-			var $text = $('<p class="text-center" id="text">').html(data.text);
-			$('#quote').append($author).append($text);
-		}
-		$.getJSON('http://198.199.95.142:7378/quote/random', callback)
+		renderRandomQuote();
 	});
 
 	//creates a popup tweet window populated with the quote

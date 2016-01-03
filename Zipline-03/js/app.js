@@ -37,7 +37,7 @@ $(document).ready(function() {
     }
   }
   function getWeather(lat, lon) {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon;
+    var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=a798de8e1df640529fc3cdd0b5cab5fd';
     $.getJSON(url, function(data) {
       renderPage(data);
     });
@@ -68,11 +68,9 @@ $(document).ready(function() {
       //cold background
       tempName = 'cold';
     }
-    $('.container').css('background', "#333 url('http://dev.lawlietblack.com/img/" + tempName + ".png') no-repeat fixed center");
+    $('body').css('background', "#333 url('http://dev.lawlietblack.com/img/" + tempName + ".png') no-repeat fixed center").css("background-size", "cover")
   }
-  
   getLocation(); 
-
   $("#change-temp").click(function() {
     var temp = $('#temp').attr("data-temp");
     var tempCel = Math.round(temp - 272.15);
@@ -88,14 +86,18 @@ $(document).ready(function() {
   });
   $('#getWeather').click(function() {
     var zip = $('#zip').val();
-    var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us";
+    var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=a798de8e1df640529fc3cdd0b5cab5fd";
     $.getJSON(url, function(data) {
       renderPage(data);
     });
   });
   $('#zip').bind('keypress', function(e) {
     if(e.keyCode==13){
-      alert("enter pressed!")
+      var zip = $('#zip').val();
+      var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us";
+      $.getJSON(url, function(data) {
+        renderPage(data);
+      });
     }
   });
 });

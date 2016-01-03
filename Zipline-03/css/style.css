@@ -1,13 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+html, body, main, .container {
+  height: 100%;
+  width:100%;
+}
 body {
-	background-color: #222;
-	color:#ddd;
+  background-color: #222;
+  color:#fff;
   text-shadow: 1px 1px #000;
+  background-size: cover;
 }
 .container {
-  margin-top: 40px;
-  margin-bottom:40px;
-  background: #333 url('http://jinqiaojs.com/hd/snowy-mountain-hd-wallpaper-photo-5v9.jpg') no-repeat fixed center;
-  background-size: cover;
   padding:40px;
 }
 .top-spacing {
@@ -16,4 +20,7 @@ body {
 .form-group input {
   display: inline;
   width:200px;
+}
+h1:first-child {
+  margin-top:80px;
 }
