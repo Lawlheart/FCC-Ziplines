@@ -22,7 +22,8 @@ body {
 }
 main {
   box-sizing: border-box;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 100%;
   margin: 20px auto;
 }
@@ -95,17 +96,21 @@ h1 {
       margin: $title-margin 0;
       font-size: 1.5em;
       height: 0.5 * $tile-height - 2*$title-margin;
-      width: 100%;
+      width: 100%;        
+      margin-left: $title-margin + $tile-height + $rank-width;
+      @media screen and (max-width: $mobile-break) {
+        margin-left: $title-margin + $tile-height + $rank-width - 40px;
+      }
       @media screen and (min-width: $hard-break) {
         width: 280px;
         font-size: 2.2em;
         float:left;
-        margin: $title-margin * 3 0;
+        margin: $title-margin * 3;
         height: $tile-height - 6 * $title-margin;
       }
       @media screen and (min-width: $title-size-break) {
         font-size: 3em;
-        margin: $title-margin * 2 0;
+        margin: $title-margin * 2;
         height: $tile-height - 4 * $title-margin;
       }
     }
@@ -159,3 +164,4 @@ h1 {
     }
   }
 }
+
