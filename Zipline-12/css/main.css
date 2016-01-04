@@ -1,0 +1,177 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: "Open Sans", sans-serif; }
+
+main {
+  box-sizing: border-box;
+  overflow: auto;
+  width: 100%;
+  margin: 20px auto; }
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin: 10px auto 20px; }
+
+.leaderboard {
+  max-width: 1000px;
+  margin: auto;
+  width: 90%;
+  background-color: #3c3c3c; }
+  @media screen and (max-width: 450px) {
+    .leaderboard {
+      width: 97%; } }
+  .leaderboard .key {
+    position: relative;
+    border: 3px solid #222;
+    height: 40px; }
+    @media screen and (max-width: 450px) {
+      .leaderboard .key {
+        height: 30px; } }
+    .leaderboard .key h3 {
+      text-align: center;
+      font-size: 1.5em;
+      float: left;
+      padding: 8px 0;
+      height: 24px; }
+      @media screen and (max-width: 450px) {
+        .leaderboard .key h3 {
+          font-size: 1em;
+          height: 14px; } }
+    .leaderboard .key .rank {
+      width: 80px;
+      background-color: #108E09; }
+      @media screen and (max-width: 450px) {
+        .leaderboard .key .rank {
+          width: 40px;
+          font-size: 1em; } }
+    .leaderboard .key .camper {
+      margin-left: 10px; }
+    .leaderboard .key button.toggle {
+      cursor: pointer;
+      background-color: #555555;
+      color: #fff;
+      border: none;
+      position: absolute;
+      right: 0;
+      width: 100px;
+      height: 40px; }
+      @media screen and (max-width: 450px) {
+        .leaderboard .key button.toggle {
+          height: 30px; } }
+  .leaderboard .tile {
+    border: 3px solid #222;
+    height: 80px;
+    position: relative; }
+    .leaderboard .tile .avatar {
+      height: 80px;
+      float: left; }
+    .leaderboard .tile .username {
+      white-space: nowrap;
+      margin: 8px 0;
+      font-size: 1.5em;
+      height: 24px;
+      width: 100%; }
+      @media screen and (min-width: 800px) {
+        .leaderboard .tile .username {
+          width: 280px;
+          font-size: 2.2em;
+          float: left;
+          margin: 24px 0;
+          height: 32px; } }
+      @media screen and (min-width: 950px) {
+        .leaderboard .tile .username {
+          font-size: 3em;
+          margin: 16px 0;
+          height: 48px; } }
+    .leaderboard .tile .points-container {
+      height: 40px;
+      margin: 0 0 0 160px; }
+      @media screen and (max-width: 450px) {
+        .leaderboard .tile .points-container {
+          margin-left: 120px; } }
+    .leaderboard .tile .points {
+      float: right;
+      width: 50%;
+      height: 20px;
+      padding: 10px 0;
+      text-align: center; }
+      .leaderboard .tile .points.recent {
+        background-color: #0E4770; }
+      .leaderboard .tile .points.alltime {
+        background-color: #480F76; }
+      .leaderboard .tile .points .title {
+        font-size: 0.8em; }
+      @media screen and (min-width: 800px) {
+        .leaderboard .tile .points {
+          padding: 0;
+          margin: 0;
+          width: 100px;
+          height: 80px; }
+          .leaderboard .tile .points .title, .leaderboard .tile .points .pt-value {
+            font-size: 1.4em;
+            display: block;
+            width: 100%;
+            padding: 8px 0;
+            text-align: center; } }
+    .leaderboard .tile .rank {
+      float: left;
+      font-size: 1.5em;
+      text-align: center;
+      height: 24px;
+      width: 80px;
+      padding: 28px 0;
+      background-color: #108E09; }
+      @media screen and (max-width: 450px) {
+        .leaderboard .tile .rank {
+          width: 40px; } }
+
+/*# sourceMappingURL=main.css.map */

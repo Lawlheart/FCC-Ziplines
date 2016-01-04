@@ -120,3 +120,11 @@ User Stories
 
  - As a user, I can type GitHub-flavored Markdown into a text area.
  - As a user, I can see a preview of the output of my markdown that is updated as I type.
+
+## Zipline 12 - Build a Camper Leaderboard
+
+User Stories
+
+ - As a user, I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.
+ - As a user, I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.
+ - As a user, I can toggle between sorting the list by how many bronwie points they've earned in the past 30 days and by how many brownie points they've earned total.
