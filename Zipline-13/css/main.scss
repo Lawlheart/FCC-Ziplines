@@ -1,0 +1,129 @@
+$bg-color: #222;
+$main-color: #fff;
+$card-color: #333;
+$title-font: 'Lato', sans-serif;
+$content-font: 'Merriweather Sans', serif;
+
+$media-lg: 1200px;
+$media-md: 768px;
+$media-sm: 480px;
+
+* {
+  box-sizing: border-box; }
+body {
+  background-color: #222;
+  color: #fff; }
+h1.title {
+  font-family: $title-font;
+  font-size: 2em;
+  text-align: center;
+  margin: 20px auto; 
+}
+.recipe-btn {
+  border: 0px;
+  height: 40px;
+  background-color: #333;
+  width: 50%;
+  float: left;
+  border-radius:0px;
+  border: 1px solid #222;
+}
+.recipe-title {
+  cursor: pointer;
+  font-family: $title-font;
+  font-size: 1.6em;
+  padding: 10px;
+  margin: 0;
+  background-color: #242;
+  clear: both; 
+  &.edit-true {
+    cursor: default;
+  }
+  .btn {
+    padding: 4px 5px;
+    margin:-2px -4px -2px 7px;
+    &.hidden-true {
+      display: none;
+    }
+  }
+}
+main {
+  margin: 20px auto;
+  overflow: auto;
+  .container {
+    padding: 0; }
+  .recipe-box {
+    border: 1px solid #222;
+  }
+  .recipe-contents {
+    background-color: $card-color;
+    overflow: auto;
+    &.minimized {
+      display: none; } }
+  .half {
+    width: 50%;
+    float: left;
+    font-family: $content-font;
+    line-height:1.1em;
+    @media screen and (max-width: $media-sm) {
+      width: 100%; }
+    .ingredient-title, .directions-title {
+      font-family: $title-font;
+      font-size: 1.4em;
+      margin:0 0 10px;
+      padding:6px;
+      background-color: lighten($bg-color, 10%); }
+    .ingredient-list {
+      li {
+        margin:8px; } }
+    &.directions {
+      .direction-item {
+        margin:10px; } } } }
+.modal {
+  min-height: 600px;
+  .modal-dialog {
+    min-height: 500px;
+    width: 95%;
+  }
+}
+.modal-content {
+  background-color: #222;
+  .form-group {
+    width: 98%;
+    margin: auto;
+    input, textarea {
+      margin-bottom: 10px;
+      background-color: #333;
+      border-color: #252525;
+      color: #fff;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    @media screen and (min-width: $media-md) {
+      input {
+        width: 100%;
+      }
+      textarea {
+        min-height: 200px;
+      }
+      .left {
+        width: 48%;
+        float: left;
+      }
+      .right {
+        width: 48%;
+        float: right;
+      }
+    }
+  }
+  .modal-header {
+    text-align: center;
+    background-color: #242;
+    border: 0px;
+  }
+  .modal-body {
+    min-height: 350px;
+  }
+}
+
