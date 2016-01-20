@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,700);
+
+$lightest-blue: #778195;
+$light-blue: #505F7A;
+$blue: #354664;
+$dark-blue: #1E3053;
+$darkest-blue: #061735;
+
+$dot-size: 12px;
+
+@mixin grid($height, $width) {
+  .dot-box.height-#{$height}.width-#{$width} {
+    height: $height * $dot-size;
+    width: $width * $dot-size;
+  }
+}
+@for $i from 5 through 100 {
+  @for $j from 5 through 100 {
+    @include grid($i, $j);
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  background-color: $blue;
+}
+.card {
+  height: 400px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 6px;
+  
+}
+.dot-box {
+  background-color: #000000;
+  color: $lightest-blue;
+  padding: 0;
+  overflow: auto;
+}
+.dot {
+  height: $dot-size;
+  width: $dot-size;
+  border: 1px solid #222222;
+  float: left;
+  .live {
+    background-color: $blue; }
+  .born {
+    background-color: lighten($lightest-blue, 10%); }
+}
