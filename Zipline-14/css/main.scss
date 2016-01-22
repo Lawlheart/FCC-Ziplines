@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
-@import url(https://fonts.googleapis.com/css?family=Dosis:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 
 $lightest-blue: #778195;
 $light-blue: #505F7A;
@@ -9,17 +9,22 @@ $darkest-blue: #061735;
 
 $dot-size: 12px;
 
+$roboto: 'Roboto', sans-serif;
+$narrow: 'PT Sans Narrow', sans-serif;
+
 @mixin grid($height, $width) {
   .dot-box.height-#{$height}.width-#{$width} {
     height: $height * $dot-size;
     width: $width * $dot-size;
   }
-}
-@for $i from 5 through 100 {
-  @for $j from 5 through 100 {
-    @include grid($i, $j);
+  .card.height-#{$height}.width-#{$width} {
+    height: $height * $dot-size + 40px;
+    width: $width * $dot-size + 40px;
   }
 }
+@include grid(20, 20);
+@include grid(30, 40);
+@include grid(40, 50);
 
 
 * {
@@ -27,32 +32,78 @@ $dot-size: 12px;
 }
 html {
   height: 100%;
-}
-body {
-  background-color: $blue;
-}
+  font-family: $roboto;
+  background-color: $blue;}
+h2 {
+  color: $light-blue; }
+.card-container {
+  text-align: center;}
+.card-title {
+  background-color: #222;
+  display:inline-block;
+  margin: 20px auto 0;
+  padding: 2px 20px;
+  border-radius: 20px 20px 0 0;}
 .card {
-  height: 400px;
-  width: 90%;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
   background-color: #222;
-  border-radius: 6px;
-  
-}
+  border-radius: 20px;
+  position: relative;
+  .generation-count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0; 
+    font-size: 1em;
+    color: $light-blue;}}
+
+.buttons {
+  background-color: #222;
+  button {
+    background-color: $dark-blue;
+    border: 1px solid $darkest-blue;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 2px 2px;
+    &.speed-button, &.size-button {
+      padding: 4px; 
+      &.selected {
+        background-color: $darkest-blue;
+        color: $lightest-blue;
+        border-color: darken($darkest-blue, 10%);}}}
+  &.bottom {
+    margin:0 auto;
+    display: inline-block;
+    padding: 0 20px 10px;
+    border-radius: 0 0 20px 20px;}
+  &.side {
+    width: 50px;
+    position: absolute;
+    top: 28%;
+    padding:20px 0;
+    &.left {
+      left: -30px;
+      border-radius:20px 0 0 20px;}
+    &.right {
+      right: -30px;
+      border-radius:0 20px 20px 0;}
+    p {
+      color: $lightest-blue;
+      font-family: $narrow;
+      margin: 0 0 4px;}}}
 .dot-box {
   background-color: #000000;
   color: $lightest-blue;
   padding: 0;
-  overflow: auto;
-}
+  overflow: auto;}
 .dot {
   height: $dot-size;
   width: $dot-size;
   border: 1px solid #222222;
   float: left;
-  .live {
-    background-color: $blue; }
-  .born {
-    background-color: lighten($lightest-blue, 10%); }
-}
+  &.live {
+    background-color: $blue;}
+  &.born {
+    background-color: lighten($lightest-blue, 10%);}}
