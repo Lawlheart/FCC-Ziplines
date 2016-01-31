@@ -150,7 +150,8 @@ Main = React.createClass({
     })
   },
   randomize: function() {
-    var live = []
+    var live = [],
+      generations: 0
     for(var i=0; i<(this.state.height * this.state.width); i++) {
       if(Math.floor(Math.random() * 2)) {
         live.push(i);
@@ -162,7 +163,8 @@ Main = React.createClass({
   },
   clear: function() {
     this.setState({ 
-      live: []
+      live: [],
+      generations: 0
     })
   },
   render: function() {

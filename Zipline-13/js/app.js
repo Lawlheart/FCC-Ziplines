@@ -192,10 +192,10 @@ var Main = React.createClass({
       $('.recipe-contents').addClass('minimized ')
     })
   },
-  showModal() {
+  showModal: function() {
     this.setState({modalOpen: true});
   },
-  hideModal() {
+  hideModal: function() {
     this.setState({
       modalOpen: false,
       editIndex: -1

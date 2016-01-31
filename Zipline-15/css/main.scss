@@ -1,0 +1,108 @@
+@import "mixins";
+
+
+body {
+	background-color: #222;
+}
+.box {
+	position: relative;
+  margin: 40px auto;
+	height: 480px;
+	width: 640px;
+  overflow: hidden;
+  background-color: #555;
+}
+.map {
+  margin: 0;
+  padding: 0;
+  height: 640px;
+  width: 960px;
+  overflow: auto;
+  position: relative;
+  .tile {
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #444;
+    background-color: #333;
+  }
+}
+
+.sprite {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	&.blackmage {	
+		&.left {
+			background: url('../img/sprites.png') no-repeat -478px -310px /  880px 830px;
+		}
+		&.right {
+			background: url('../img/sprites.png') no-repeat -538px -310px /  880px 830px;
+		}
+		&.down {
+			background: url('../img/sprites.png') no-repeat -598px -310px /  880px 830px;
+		}
+		&.up {
+			background: url('../img/sprites.png') no-repeat -658px -310px /  880px 830px;
+		}
+	}
+	&.redmage {
+		&.left {
+			background: url('../img/sprites-test.png') no-repeat -478px -10px /  880px 830px;
+		}
+		&.right {
+			background: url('../img/sprites-test.png') no-repeat -538px -10px /  880px 830px;
+		}
+		&.down {
+			background: url('../img/sprites-test.png') no-repeat -598px -10px /  880px 830px;
+		}
+		&.up {
+			background: url('../img/sprites-test.png') no-repeat -658px -10px /  880px 830px;
+		}
+	}
+  &.baddie.left {
+    background: url('../img/baddies.png') no-repeat -520px 0 / 712px 232px;
+  }
+  &.baddie.right {
+    background: url('../img/baddies.png') no-repeat -480px 0 / 712px 232px;
+  }
+}
+
+.gear {
+  position: absolute;
+  &.potion {
+    background: url('../img/gear.png') no-repeat -173px -250px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+.health-bar-container {
+  position: absolute;
+  background: linear-gradient(#111, lighten(#111, 16%));
+  border-radius: 3px;
+  z-index: 100;
+  top: 10px;
+  right: 10px;
+  height: 20px;
+  width: 160px;
+  @include health-bar-fill;
+  .health-bar {
+    height: 100%
+
+  }
+}
+
+.coords {
+  position: absolute;
+  top: -4px;
+  right: -200px;
+  font-size: 1.2em;
+  display: block;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 3px;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "roguelike",
+  "version": "0.0.0",
+  "description": "Roguelike game built as part of FreeCodeCamp curriculum.",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenneth Black",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-watch": "^4.3.5"
+  }
+}

@@ -1,0 +1,19 @@
+@mixin health-bar-fill() {
+  @for $i from 0 to 101 {
+    .health-val-#{$i} {
+      width: percentage($i/100);
+      @if $i < 20 {
+        background: linear-gradient(#EF002A, darken(#EF002A, 20%));
+      } @else if $i < 60 {
+        background: linear-gradient(#FFCE00, darken(#FFCE00, 20%));
+      } @else {
+        background: linear-gradient(#0ACF00, darken(#0ACF00, 20%));
+      }
+      @if $i > 98 {
+        border-radius: 3px;
+      } @else {
+        border-radius: 3px 0 0 3px;
+      }
+    }
+  }
+}
