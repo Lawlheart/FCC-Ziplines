@@ -353,9 +353,11 @@ var Main = React.createClass({
       var y1 = rooms[i - 1].center[1];
       var y2 = rooms[i].center[1];
       if (this.random(0, 1)) {
+        console.log("H first");
         coords = this.hCorridors(x1, x2, y1, coords);
         coords = this.vCorridors(y1, y2, x2, coords);
       } else {
+        console.log("V first");
         coords = this.vCorridors(y1, y2, x2, coords);
         coords = this.hCorridors(x1, x2, y1, coords);
       }
@@ -914,7 +916,7 @@ var Main = React.createClass({
         ),
         React.createElement(
           'div',
-          { className: 'potions-box' },
+          { className: 'potions-box clearfix' },
           React.createElement(
             'h2',
             null,
@@ -927,6 +929,20 @@ var Main = React.createClass({
             ' on map'
           ),
           React.createElement('div', { className: 'gear potion info' })
+        ),
+        React.createElement(
+          'div',
+          { className: 'objective-box clearfix' },
+          React.createElement(
+            'h2',
+            null,
+            'Objective'
+          ),
+          React.createElement(
+            'h4',
+            null,
+            'Kill the boss'
+          )
         )
       ),
       ui,

@@ -524,7 +524,8 @@ body {
   .sprite.player .floating-text {
     position: relative;
     text-shadow: 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000;
-    margin: 0 -20px; }
+    margin: 0 -20px;
+    font-weight: bold; }
     .sprite.player .floating-text .hit {
       position: absolute;
       top: -20px;
@@ -588,18 +589,19 @@ body {
   border-radius: 3px 3px 0 0;
   text-align: center;
   padding: 10px; }
-  .sidebar .baddie-box, .sidebar .weapon-box {
-    margin: 20px auto; }
   .sidebar h2 {
     margin: 10px auto;
     border-bottom: 1px solid #444; }
   .sidebar h4 {
-    margin: 0;
     float: right;
     clear: both;
     margin: 7px; }
   .sidebar .baddie, .sidebar .boss, .sidebar .gear {
     float: left; }
+  .sidebar .objective-box h4 {
+    margin: 7px auto;
+    float: none;
+    text-align: center; }
 
 .clearfix:before, .clearfix:after {
   content: " ";

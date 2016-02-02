@@ -814,10 +814,14 @@ var Main = React.createClass({
             <h4>Strongest</h4>          
             <div className="gear maul info" />
           </div> 
-          <div className="potions-box">
+          <div className="potions-box clearfix">
             <h2>Potions</h2>
             <h4>{this.state.potions.length} on map</h4>
             <div className="gear potion info" /> 
+          </div>
+          <div className="objective-box clearfix">
+            <h2>Objective</h2>
+            <h4>Kill the boss</h4>
           </div>
         </div>
         {ui}
