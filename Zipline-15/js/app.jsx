@@ -357,8 +357,15 @@ var Main = React.createClass({
       var x2 = rooms[i].center[0];
       var y1 = rooms[i-1].center[1];
       var y2 = rooms[i].center[1];
-      coords = this.hCorridors(x1, x2, y1, coords);
-      coords = this.vCorridors(y1, y2, x2, coords);
+      if(this.random(0, 1)) {
+        console.log("H first");
+        coords = this.hCorridors(x1, x2, y1, coords);
+        coords = this.vCorridors(y1, y2, x2, coords);
+      } else {
+        console.log("V first");
+        coords = this.vCorridors(y1, y2, x2, coords);
+        coords = this.hCorridors(x1, x2, y1, coords);
+      }
     }
     return coords;
   },
@@ -436,7 +443,7 @@ var Main = React.createClass({
     return onmap && notWall;
   },
   moveSprite: function(e) {
-    if(this.state.health === 0) {
+    if(this.state.health === 0 || this.state.win) {
       return
     }
     e.preventDefault();
@@ -557,7 +564,7 @@ var Main = React.createClass({
     } else if(weapon === 'maul') {
       damage += this.random(4, 24);
     }
-    this.flashMessage("* " + damage, 'hit');
+    this.flashMessage("* " + damage + " dmg", 'hit');
     return damage;
   },
   fight: function(baddieIndex) {
@@ -570,7 +577,7 @@ var Main = React.createClass({
       if(damage >= baddie.hp) {
         baddieset.splice(baddieIndex, 1)
         baddies.splice(baddieIndex, 1)
-        this.flashMessage("+ " + 10 * baddie.level, 'xp');
+        this.flashMessage("+ " + 10 * baddie.level + " xp", 'xp');
         this.checkForLevelUp(this.state.xp + 10 * baddie.level);
         this.setState({
           xp: this.state.xp + 10 * baddie.level,
@@ -638,7 +645,7 @@ var Main = React.createClass({
     if(state === 'gameover') {
       return false;
     } else {
-      this.flashMessage("- " + dmg, 'hurt');
+      this.flashMessage("- " + dmg + " hp", 'hurt');
       return true;
     }
 
@@ -650,7 +657,7 @@ var Main = React.createClass({
     } else {
       health += amt;
     }
-    this.flashMessage("- " + amt, 'heal');
+    this.flashMessage("+ " + amt + " hp", 'heal');
     this.setState({
       health: health
     })

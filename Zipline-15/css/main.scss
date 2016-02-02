@@ -116,13 +116,13 @@ body {
 			background: url('../img/sprites.png') no-repeat -658px -310px /  880px 830px;}}
 	&.redmage {
 		&.left {
-			background: url('../img/sprites-test.png') no-repeat -478px -10px /  880px 830px;}
+			background: url('../img/sprites.png') no-repeat -478px -10px /  880px 830px;}
 		&.right {
-			background: url('../img/sprites-test.png') no-repeat -538px -10px /  880px 830px;}
+			background: url('../img/sprites.png') no-repeat -538px -10px /  880px 830px;}
 		&.down {
-			background: url('../img/sprites-test.png') no-repeat -598px -10px /  880px 830px;}
+			background: url('../img/sprites.png') no-repeat -598px -10px /  880px 830px;}
 		&.up {
-			background: url('../img/sprites-test.png') no-repeat -658px -10px /  880px 830px;}}
+			background: url('../img/sprites.png') no-repeat -658px -10px /  880px 830px;}}
   &.baddie.left.red {
     background: url('../img/baddies.png') no-repeat -520px 0 / 712px 232px;}
   &.baddie.right.red {
@@ -145,6 +145,8 @@ body {
   &.player .floating-text {
     position: relative;
     text-shadow: 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000;
+    margin: 0 -20px;
+    font-weight: bold;
     
     .hit {
       position: absolute;
@@ -159,12 +161,12 @@ body {
     .heal {
       position: absolute;
       bottom: -20px;
-      right: -50px;
+      right: -40px;
       color: #0f0;}
     .xp {
       position: absolute;
       bottom: -20px;
-      left: -40px;
+      left: -30px;
       color: #ffa500;}
   }
 }
