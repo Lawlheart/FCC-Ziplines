@@ -1,20 +1,473 @@
 body {
   background-color: #222; }
 
+.user-interface {
+  width: 638px;
+  margin: 40px auto 0;
+  height: 46px;
+  overflow: auto;
+  position: relative;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 3px 3px 0 0; }
+  .user-interface .player-stats {
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .user-interface .player-stats h3, .user-interface .player-stats h4 {
+      margin: 0; }
+  .user-interface .weapon-label {
+    position: absolute;
+    top: 12px;
+    left: 140px; }
+  .user-interface .player-weapon {
+    position: absolute;
+    top: 6px;
+    left: 200px; }
+  .user-interface .coords {
+    position: absolute;
+    top: -4px;
+    right: 180px;
+    font-size: 1.2em;
+    display: block; }
+  .user-interface .health-bar-container {
+    position: absolute;
+    background: linear-gradient(#111, #3a3a3a);
+    border-radius: 3px;
+    z-index: 100;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 160px; }
+    .user-interface .health-bar-container .health-val-0 {
+      width: 0%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-1 {
+      width: 1%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-2 {
+      width: 2%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-3 {
+      width: 3%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-4 {
+      width: 4%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-5 {
+      width: 5%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-6 {
+      width: 6%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-7 {
+      width: 7%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-8 {
+      width: 8%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-9 {
+      width: 9%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-10 {
+      width: 10%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-11 {
+      width: 11%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-12 {
+      width: 12%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-13 {
+      width: 13%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-14 {
+      width: 14%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-15 {
+      width: 15%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-16 {
+      width: 16%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-17 {
+      width: 17%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-18 {
+      width: 18%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-19 {
+      width: 19%;
+      background: linear-gradient(#EF002A, #890018);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-20 {
+      width: 20%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-21 {
+      width: 21%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-22 {
+      width: 22%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-23 {
+      width: 23%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-24 {
+      width: 24%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-25 {
+      width: 25%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-26 {
+      width: 26%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-27 {
+      width: 27%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-28 {
+      width: 28%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-29 {
+      width: 29%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-30 {
+      width: 30%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-31 {
+      width: 31%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-32 {
+      width: 32%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-33 {
+      width: 33%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-34 {
+      width: 34%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-35 {
+      width: 35%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-36 {
+      width: 36%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-37 {
+      width: 37%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-38 {
+      width: 38%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-39 {
+      width: 39%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-40 {
+      width: 40%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-41 {
+      width: 41%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-42 {
+      width: 42%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-43 {
+      width: 43%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-44 {
+      width: 44%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-45 {
+      width: 45%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-46 {
+      width: 46%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-47 {
+      width: 47%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-48 {
+      width: 48%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-49 {
+      width: 49%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-50 {
+      width: 50%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-51 {
+      width: 51%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-52 {
+      width: 52%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-53 {
+      width: 53%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-54 {
+      width: 54%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-55 {
+      width: 55%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-56 {
+      width: 56%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-57 {
+      width: 57%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-58 {
+      width: 58%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-59 {
+      width: 59%;
+      background: linear-gradient(#FFCE00, #997c00);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-60 {
+      width: 60%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-61 {
+      width: 61%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-62 {
+      width: 62%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-63 {
+      width: 63%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-64 {
+      width: 64%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-65 {
+      width: 65%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-66 {
+      width: 66%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-67 {
+      width: 67%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-68 {
+      width: 68%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-69 {
+      width: 69%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-70 {
+      width: 70%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-71 {
+      width: 71%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-72 {
+      width: 72%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-73 {
+      width: 73%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-74 {
+      width: 74%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-75 {
+      width: 75%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-76 {
+      width: 76%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-77 {
+      width: 77%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-78 {
+      width: 78%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-79 {
+      width: 79%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-80 {
+      width: 80%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-81 {
+      width: 81%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-82 {
+      width: 82%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-83 {
+      width: 83%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-84 {
+      width: 84%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-85 {
+      width: 85%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-86 {
+      width: 86%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-87 {
+      width: 87%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-88 {
+      width: 88%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-89 {
+      width: 89%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-90 {
+      width: 90%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-91 {
+      width: 91%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-92 {
+      width: 92%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-93 {
+      width: 93%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-94 {
+      width: 94%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-95 {
+      width: 95%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-96 {
+      width: 96%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-97 {
+      width: 97%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-98 {
+      width: 98%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px 0 0 3px; }
+    .user-interface .health-bar-container .health-val-99 {
+      width: 99%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px; }
+    .user-interface .health-bar-container .health-val-100 {
+      width: 100%;
+      background: linear-gradient(#0ACF00, #056900);
+      border-radius: 3px; }
+    .user-interface .health-bar-container .health-bar {
+      height: 100%; }
+
 .box {
   position: relative;
-  margin: 40px auto;
-  height: 480px;
-  width: 640px;
+  margin: 0 auto;
   overflow: hidden;
   background-color: #555; }
+  .box.game-over, .box.game-win {
+    background-color: #000;
+    text-align: center; }
+    .box.game-over h1, .box.game-win h1 {
+      margin: 40px; }
+    .box.game-over button, .box.game-win button {
+      background: #3c3c3c;
+      border-radius: 3px;
+      border: 1px solid #222;
+      color: #fff;
+      padding: 0.375em 0.8em;
+      cursor: pointer; }
 
 .map {
   margin: 0;
   padding: 0;
-  height: 640px;
-  width: 960px;
-  overflow: auto;
+  overflow: hidden;
   position: relative; }
   .map .tile {
     float: left;
@@ -22,8 +475,13 @@ body {
     padding: 0;
     height: 30px;
     width: 30px;
-    border: 1px solid #444;
-    background-color: #333; }
+    border: 1px solid #111;
+    background: url("../img/gear.png") no-repeat -423px -723px; }
+    .map .tile.wall {
+      background: url("../img/gear.png") no-repeat -391px -659px; }
+    .map .tile.fog {
+      background: #000;
+      border: 1px solid #000; }
 
 .sprite {
   width: 32px;
@@ -45,10 +503,47 @@ body {
     background: url("../img/sprites-test.png") no-repeat -598px -10px/880px 830px; }
   .sprite.redmage.up {
     background: url("../img/sprites-test.png") no-repeat -658px -10px/880px 830px; }
-  .sprite.baddie.left {
+  .sprite.baddie.left.red {
     background: url("../img/baddies.png") no-repeat -520px 0/712px 232px; }
-  .sprite.baddie.right {
+  .sprite.baddie.right.red {
     background: url("../img/baddies.png") no-repeat -480px 0/712px 232px; }
+  .sprite.baddie.left.blue {
+    background: url("../img/baddies.png") no-repeat -40px -40px/712px 232px; }
+  .sprite.baddie.right.blue {
+    background: url("../img/baddies.png") no-repeat 0 -40px/712px 232px; }
+  .sprite.baddie.left.gold {
+    background: url("../img/baddies.png") no-repeat -280px -40px/712px 232px; }
+  .sprite.baddie.right.gold {
+    background: url("../img/baddies.png") no-repeat -240px -40px/712px 232px; }
+  .sprite.info, .sprite.boss.info {
+    position: relative; }
+  .sprite.boss {
+    background: url("../img/baddies.png") no-repeat -240px -160px/712px 232px; }
+  .sprite.fog {
+    display: none; }
+  .sprite.player .floating-text {
+    position: relative;
+    text-shadow: 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000; }
+    .sprite.player .floating-text .hit {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      color: #fff; }
+    .sprite.player .floating-text .hurt {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      color: #f00; }
+    .sprite.player .floating-text .heal {
+      position: absolute;
+      bottom: -20px;
+      right: -50px;
+      color: #0f0; }
+    .sprite.player .floating-text .xp {
+      position: absolute;
+      bottom: -20px;
+      left: -40px;
+      color: #ffa500; }
 
 .gear {
   position: absolute; }
@@ -56,431 +551,59 @@ body {
     background: url("../img/gear.png") no-repeat -173px -250px;
     width: 32px;
     height: 32px; }
+  .gear.dagger {
+    background: url("../img/gear.png") no-repeat -12px -118px;
+    width: 32px;
+    height: 32px; }
+  .gear.sword {
+    background: url("../img/gear.png") no-repeat -45px -122px;
+    width: 31px;
+    height: 32px; }
+  .gear.staff {
+    background: url("../img/gear.png") no-repeat -143px -124px;
+    width: 29px;
+    height: 29px; }
+  .gear.maul {
+    background: url("../img/gear.png") no-repeat -175px -123px;
+    width: 29px;
+    height: 30px; }
+  .gear.fog {
+    display: none; }
+  .gear.info {
+    position: relative; }
 
-.health-bar-container {
-  position: absolute;
-  background: linear-gradient(#111, #3a3a3a);
-  border-radius: 3px;
-  z-index: 100;
-  top: 10px;
-  right: 10px;
-  height: 20px;
-  width: 160px; }
-  .health-bar-container .health-val-0 {
-    width: 0%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-1 {
-    width: 1%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-2 {
-    width: 2%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-3 {
-    width: 3%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-4 {
-    width: 4%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-5 {
-    width: 5%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-6 {
-    width: 6%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-7 {
-    width: 7%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-8 {
-    width: 8%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-9 {
-    width: 9%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-10 {
-    width: 10%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-11 {
-    width: 11%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-12 {
-    width: 12%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-13 {
-    width: 13%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-14 {
-    width: 14%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-15 {
-    width: 15%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-16 {
-    width: 16%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-17 {
-    width: 17%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-18 {
-    width: 18%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-19 {
-    width: 19%;
-    background: linear-gradient(#EF002A, #890018);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-20 {
-    width: 20%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-21 {
-    width: 21%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-22 {
-    width: 22%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-23 {
-    width: 23%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-24 {
-    width: 24%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-25 {
-    width: 25%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-26 {
-    width: 26%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-27 {
-    width: 27%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-28 {
-    width: 28%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-29 {
-    width: 29%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-30 {
-    width: 30%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-31 {
-    width: 31%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-32 {
-    width: 32%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-33 {
-    width: 33%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-34 {
-    width: 34%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-35 {
-    width: 35%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-36 {
-    width: 36%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-37 {
-    width: 37%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-38 {
-    width: 38%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-39 {
-    width: 39%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-40 {
-    width: 40%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-41 {
-    width: 41%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-42 {
-    width: 42%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-43 {
-    width: 43%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-44 {
-    width: 44%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-45 {
-    width: 45%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-46 {
-    width: 46%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-47 {
-    width: 47%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-48 {
-    width: 48%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-49 {
-    width: 49%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-50 {
-    width: 50%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-51 {
-    width: 51%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-52 {
-    width: 52%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-53 {
-    width: 53%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-54 {
-    width: 54%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-55 {
-    width: 55%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-56 {
-    width: 56%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-57 {
-    width: 57%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-58 {
-    width: 58%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-59 {
-    width: 59%;
-    background: linear-gradient(#FFCE00, #997c00);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-60 {
-    width: 60%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-61 {
-    width: 61%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-62 {
-    width: 62%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-63 {
-    width: 63%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-64 {
-    width: 64%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-65 {
-    width: 65%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-66 {
-    width: 66%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-67 {
-    width: 67%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-68 {
-    width: 68%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-69 {
-    width: 69%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-70 {
-    width: 70%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-71 {
-    width: 71%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-72 {
-    width: 72%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-73 {
-    width: 73%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-74 {
-    width: 74%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-75 {
-    width: 75%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-76 {
-    width: 76%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-77 {
-    width: 77%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-78 {
-    width: 78%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-79 {
-    width: 79%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-80 {
-    width: 80%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-81 {
-    width: 81%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-82 {
-    width: 82%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-83 {
-    width: 83%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-84 {
-    width: 84%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-85 {
-    width: 85%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-86 {
-    width: 86%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-87 {
-    width: 87%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-88 {
-    width: 88%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-89 {
-    width: 89%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-90 {
-    width: 90%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-91 {
-    width: 91%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-92 {
-    width: 92%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-93 {
-    width: 93%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-94 {
-    width: 94%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-95 {
-    width: 95%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-96 {
-    width: 96%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-97 {
-    width: 97%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-98 {
-    width: 98%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px 0 0 3px; }
-  .health-bar-container .health-val-99 {
-    width: 99%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px; }
-  .health-bar-container .health-val-100 {
-    width: 100%;
-    background: linear-gradient(#0ACF00, #056900);
-    border-radius: 3px; }
-  .health-bar-container .health-bar {
-    height: 100%; }
+.game-view {
+  position: relative;
+  width: 740px;
+  margin: auto; }
 
-.coords {
+.sidebar {
+  width: 110px;
+  height: 506px;
   position: absolute;
-  top: -4px;
-  right: -200px;
-  font-size: 1.2em;
-  display: block;
+  right: -80px;
   background-color: #333;
   border: 1px solid #444;
-  border-radius: 3px; }
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+  padding: 10px; }
+  .sidebar .baddie-box, .sidebar .weapon-box {
+    margin: 20px auto; }
+  .sidebar h2 {
+    margin: 10px auto;
+    border-bottom: 1px solid #444; }
+  .sidebar h4 {
+    margin: 0;
+    float: right;
+    clear: both;
+    margin: 7px; }
+  .sidebar .baddie, .sidebar .boss, .sidebar .gear {
+    float: left; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+.clearfix:after {
+  clear: both; }
 
 /*# sourceMappingURL=main.css.map */

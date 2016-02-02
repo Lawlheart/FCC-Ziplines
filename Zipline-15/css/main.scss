@@ -4,20 +4,84 @@
 body {
 	background-color: #222;
 }
+.user-interface {
+  width: 638px;
+  margin: 40px auto 0;
+  height: 46px;
+  overflow: auto;
+  position: relative;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 3px 3px 0 0;
+  .player-stats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    h3, h4 {
+      margin: 0;
+    }
+  }
+  .weapon-label {
+    position: absolute;
+    top: 12px;
+    left: 140px;
+  }
+  .player-weapon {
+    position: absolute;
+    top: 6px;
+    left: 200px;
+  }
+  .coords {
+    position: absolute;
+    top: -4px;
+    right: 180px;
+    font-size: 1.2em;
+    display: block;
+  }
+  .health-bar-container {
+    position: absolute;
+    background: linear-gradient(#111, lighten(#111, 16%));
+    border-radius: 3px;
+    z-index: 100;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 160px;
+    @include health-bar-fill;
+    .health-bar {
+      height: 100%
+    }
+  }
+}
+
 .box {
 	position: relative;
-  margin: 40px auto;
-	height: 480px;
-	width: 640px;
+  margin: 0 auto;
   overflow: hidden;
   background-color: #555;
+  &.game-over, &.game-win {
+    background-color: #000;
+    text-align: center;
+    h1 {
+      margin: 40px;
+    }
+    button {
+      background: lighten(#222, 10);
+      border-radius: 3px;
+      border: 1px solid #222;
+      color: #fff;
+      padding: (1.5em / 4) (1.6em / 2);
+      cursor: pointer;
+    }
+
+  }
 }
+
+
 .map {
   margin: 0;
   padding: 0;
-  height: 640px;
-  width: 960px;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   .tile {
     float: left;
@@ -25,8 +89,15 @@ body {
     padding: 0;
     height: 30px;
     width: 30px;
-    border: 1px solid #444;
-    background-color: #333;
+    border: 1px solid #111;
+    background: url('../img/gear.png') no-repeat -423px -723px;
+    &.wall {
+      background: url('../img/gear.png') no-repeat -391px -659px;
+    }
+    &.fog {
+      background: #000;
+      border: 1px solid #000;
+    }
   }
 }
 
@@ -36,37 +107,65 @@ body {
 	position: absolute;
 	&.blackmage {	
 		&.left {
-			background: url('../img/sprites.png') no-repeat -478px -310px /  880px 830px;
-		}
+			background: url('../img/sprites.png') no-repeat -478px -310px /  880px 830px;}
 		&.right {
-			background: url('../img/sprites.png') no-repeat -538px -310px /  880px 830px;
-		}
+			background: url('../img/sprites.png') no-repeat -538px -310px /  880px 830px;}
 		&.down {
-			background: url('../img/sprites.png') no-repeat -598px -310px /  880px 830px;
-		}
+			background: url('../img/sprites.png') no-repeat -598px -310px /  880px 830px;}
 		&.up {
-			background: url('../img/sprites.png') no-repeat -658px -310px /  880px 830px;
-		}
-	}
+			background: url('../img/sprites.png') no-repeat -658px -310px /  880px 830px;}}
 	&.redmage {
 		&.left {
-			background: url('../img/sprites-test.png') no-repeat -478px -10px /  880px 830px;
-		}
+			background: url('../img/sprites-test.png') no-repeat -478px -10px /  880px 830px;}
 		&.right {
-			background: url('../img/sprites-test.png') no-repeat -538px -10px /  880px 830px;
-		}
+			background: url('../img/sprites-test.png') no-repeat -538px -10px /  880px 830px;}
 		&.down {
-			background: url('../img/sprites-test.png') no-repeat -598px -10px /  880px 830px;
-		}
+			background: url('../img/sprites-test.png') no-repeat -598px -10px /  880px 830px;}
 		&.up {
-			background: url('../img/sprites-test.png') no-repeat -658px -10px /  880px 830px;
-		}
-	}
-  &.baddie.left {
-    background: url('../img/baddies.png') no-repeat -520px 0 / 712px 232px;
+			background: url('../img/sprites-test.png') no-repeat -658px -10px /  880px 830px;}}
+  &.baddie.left.red {
+    background: url('../img/baddies.png') no-repeat -520px 0 / 712px 232px;}
+  &.baddie.right.red {
+    background: url('../img/baddies.png') no-repeat -480px 0 / 712px 232px;}
+  &.baddie.left.blue {
+    background: url('../img/baddies.png') no-repeat -40px -40px / 712px 232px;}
+  &.baddie.right.blue {
+    background: url('../img/baddies.png') no-repeat 0 -40px / 712px 232px;}
+  &.baddie.left.gold {
+    background: url('../img/baddies.png') no-repeat -280px -40px / 712px 232px;}
+  &.baddie.right.gold {
+    background: url('../img/baddies.png') no-repeat -240px -40px / 712px 232px;}
+  &.info, &.boss.info {
+    position: relative;
   }
-  &.baddie.right {
-    background: url('../img/baddies.png') no-repeat -480px 0 / 712px 232px;
+  &.boss {
+    background: url('../img/baddies.png') no-repeat -240px -160px / 712px 232px;}
+  &.fog {
+    display: none;}
+  &.player .floating-text {
+    position: relative;
+    text-shadow: 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000;
+    
+    .hit {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      color: #fff;}
+    .hurt {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      color: #f00;}
+    .heal {
+      position: absolute;
+      bottom: -20px;
+      right: -50px;
+      color: #0f0;}
+    .xp {
+      position: absolute;
+      bottom: -20px;
+      left: -40px;
+      color: #ffa500;}
   }
 }
 
@@ -77,32 +176,71 @@ body {
     width: 32px;
     height: 32px;
   }
-}
-
-
-.health-bar-container {
-  position: absolute;
-  background: linear-gradient(#111, lighten(#111, 16%));
-  border-radius: 3px;
-  z-index: 100;
-  top: 10px;
-  right: 10px;
-  height: 20px;
-  width: 160px;
-  @include health-bar-fill;
-  .health-bar {
-    height: 100%
-
+  &.dagger {
+    background: url('../img/gear.png') no-repeat -12px -118px;
+    width: 32px;
+    height: 32px;
+  }
+  &.sword { 
+    background: url('../img/gear.png') no-repeat -45px -122px;
+    width: 31px;
+    height: 32px;
+  }
+  &.staff {
+    background: url('../img/gear.png') no-repeat -143px -124px;
+    width: 29px;
+    height: 29px;
+  }
+  &.maul {
+    background: url('../img/gear.png') no-repeat -175px -123px;
+    width: 29px;
+    height: 30px;
+  }
+  &.fog {
+    display: none;
+  }
+  &.info {
+    position: relative;
   }
 }
-
-.coords {
+.game-view {
+  position: relative;
+  width: 740px;
+  margin: auto;
+}
+.sidebar {
+  width: 110px;
+  height: 506px;
   position: absolute;
-  top: -4px;
-  right: -200px;
-  font-size: 1.2em;
-  display: block;
+  right: -80px;
   background-color: #333;
   border: 1px solid #444;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+  padding: 10px;
+  .baddie-box, .weapon-box {
+    margin: 20px auto;
+  }
+  h2 {
+    margin: 10px auto;
+    border-bottom: 1px solid #444;
+  }
+  h4 {
+    margin: 0;
+    float: right;
+    clear: both;
+    margin: 7px;
+  }
+  .baddie, .boss, .gear {
+    float: left;
+  }
+
+}
+
+.clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;}
+  &:after {
+    clear: both;}
 }
