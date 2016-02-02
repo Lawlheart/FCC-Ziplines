@@ -353,11 +353,9 @@ var Main = React.createClass({
       var y1 = rooms[i - 1].center[1];
       var y2 = rooms[i].center[1];
       if (this.random(0, 1)) {
-        console.log("H first");
         coords = this.hCorridors(x1, x2, y1, coords);
         coords = this.vCorridors(y1, y2, x2, coords);
       } else {
-        console.log("V first");
         coords = this.vCorridors(y1, y2, x2, coords);
         coords = this.hCorridors(x1, x2, y1, coords);
       }

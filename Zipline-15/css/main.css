@@ -524,8 +524,7 @@ body {
   .sprite.player .floating-text {
     position: relative;
     text-shadow: 2px 2px 2px #000, -2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000;
-    margin: 0 -20px;
-    font-weight: bold; }
+    margin: 0 -20px; }
     .sprite.player .floating-text .hit {
       position: absolute;
       top: -20px;
@@ -539,12 +538,12 @@ body {
     .sprite.player .floating-text .heal {
       position: absolute;
       bottom: -20px;
-      right: -40px;
+      right: -50px;
       color: #0f0; }
     .sprite.player .floating-text .xp {
       position: absolute;
       bottom: -20px;
-      left: -30px;
+      left: -40px;
       color: #ffa500; }
 
 .gear {
