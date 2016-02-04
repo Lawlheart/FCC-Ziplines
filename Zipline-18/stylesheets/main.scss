@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
+
+@import 'normalize';
+
+
+$montserrat: 'Montserrat', sans-serif;
+$cutive: 'Cutive Mono', ;
+$gothic: 'Carrois Gothic SC', sans-serif;
+
+$background-color: #222;
+$text-color: #fff;
+
+
+body {
+  background: url('../img/space.jpg') no-repeat fixed center;
+  background-size: cover;
+  color: $text-color;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $montserrat;
+}
+
+header {
+  text-align: center;
+  text-shadow: 2px 4px 4px #000;
+}
+
+main {
+  height: 800px;
+  width: 1200px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#graph {
+  background-color: transparentize(#000, 0.2);
+  border-radius: 5px;
+}
+#key {
+  position: absolute;
+  bottom: 150px;
+  right: 50px;
+  height: 50px;
+  width: 210px;
+  h5 {
+    margin: 0;
+    font: 14px $gothic;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  .key-item {
+    list-style: none;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    .key-color {
+      height: 20px;
+      width: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .key-label {
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.axis {
+  font: 16px $gothic;
+  color: $text-color;
+  line, text {
+    stroke: darken($text-color, 20%);
+    fill: $text-color;
+  }
+  path {
+    fill: none;
+    stroke: none;
+  }
+}
+
+footer {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: lighten(#002CE5, 20%);
+}
+
+.d3-tip {
+  position: relative;
+  text-align: left;
+  background-color: transparentize(#000000, .1);
+  border-radius: 3px;
+  border: 2px solid #000;
+  color: #fff;
+  padding: 10px;
+  width: 260px;
+  h4 {
+    font-size: 1.2em;
+    margin: 4px auto;
+    .label {
+      color: darken($text-color, 50%);
+    }
+  }
+  p {
+    margin: 0;
+    .label {
+      color: darken($text-color, 50%);
+      display: inline-block;
+      width: 160px;
+    }
+    &.link-line {
+      color:  darken($text-color, 50%);
+    }
+  }
+}

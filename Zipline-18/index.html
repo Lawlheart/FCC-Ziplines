@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="KeplerApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet the Neighbors</title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body ng-controller="MainController">
+  <header>
+    <h1>Meet the Neighbors</h1>
+    <h3>Exoplanet Distance Heat Map</h3>
+  </header>
+  <main>
+    <div id="key">
+      <h5>Distance to earth in parsecs</h5>
+      <ul>
+        <li class="key-item" ng-repeat="item in key">
+          <div class="key-color" style="background-color:{{item.color}};"></div>
+          <p class="key-label">{{item.threshold}}</p>
+        </li>
+      </ul>
+    </div>
+    <div id="graph"></div>
+  </main>
+  <footer>
+    <p>Exoplanet data from the NASA Exoplanet Archive at <a href="http://exoplanetarchive.ipac.caltech.edu/">http://exoplanetarchive.ipac.caltech.edu</a></p>
+    <p>Space art by <a href="https://www.flickr.com/photos/enbuscadelbitperdido/3641925288">en busca del bit perdido</a></p>
+  </footer>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js'></script>
+  <script src='app/main.js'></script>
+</body>
+</html>
