@@ -176,3 +176,18 @@ User Stories
 
  - I can see US Gross Domestic Product by quarter, over time.
  - I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.
+
+## Zipline 17 - Scatterplot Graph
+
+User Stories
+
+ - I can see performance time visualized in a scatterplot graph.
+ - I can mouse over a plot to see a tooltip with additional details.
+
+## Zipline 18 - Heat Map (in progress)
+
+User Stories
+
+ - I can view a heat map with data represented both on the Y and X axis.
+ - Each cell is colored based its relationship to other data.
+ - I can mouse over a cell in the heat map to get more exact information.
