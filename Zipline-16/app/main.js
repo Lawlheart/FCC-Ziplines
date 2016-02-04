@@ -133,7 +133,7 @@ angular.module('GNPApp', [])
           .style('fill', '#00487c')
       })
       .on('mouseleave', function(d, i) {
-        tip.show(d, i)
+        tip.hide(d, i)
         d3.select(this)
           .select('rect')
           .style('fill', 'rgba(75, 179, 253, 0.8)')

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ScatterplotApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Doping in Professional Bicycle Racing</title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body ng-controller="MainController">
+  <header>
+    <h1>Doping in Professional Bicycle Racing</h1>
+    <h2>35 Fastest times up Alpe d'Huez</h2>
+    <h4>Normalized to 13.8km distance</h4>
+  </header>
+  <main>
+    <div id="graph"></div>
+  </main>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js'></script>
+  <script src='app/main.js'></script>
+</body>
+</html>

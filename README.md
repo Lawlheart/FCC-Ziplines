@@ -166,3 +166,13 @@ User Stories
  - When I fight an enemy, we take turns damaging each other until one of us loses. I do damage based off of my level and my weapon. The enemy does damage based off of its level. Damage is somewhat random within a range.
  - When I find and beat the boss, I win.
  - The game should be challenging, but theoretically winnable.
+
+
+
+
+## Zipline 16 - Bar Chart
+
+User Stories
+
+ - I can see US Gross Domestic Product by quarter, over time.
+ - I can mouse over a bar and see a tooltip with the GDP amount and exact year and month that bar represents.
