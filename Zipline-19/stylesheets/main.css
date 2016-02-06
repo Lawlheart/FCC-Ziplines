@@ -1,0 +1,26 @@
+body {
+  background-color: #333;
+  color: #fff; }
+
+h1 {
+  text-align: center; }
+
+main {
+  height: 800px;
+  width: 800px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px; }
+
+.d3-tip {
+  position: relative;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  border: 2px solid #000;
+  color: #fff;
+  padding: 10px; }
+  .d3-tip h4 {
+    margin: 0; }
+
+/*# sourceMappingURL=main.css.map */
