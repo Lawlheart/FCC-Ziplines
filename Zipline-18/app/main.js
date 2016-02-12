@@ -22,7 +22,7 @@ angular.module('KeplerApp', [])
     threshold: 10000,
     color:'#002CE5'
   }]
-  d3.json('app/planets.json', function(data) {
+  d3.csv('app/planets.csv', function(data) {
     var planets = data.filter(function(planet) {
       return planet.mass_e !== "" && planet.radius_e !== "" &&  planet.distance !== ""
     });

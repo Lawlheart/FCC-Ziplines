@@ -184,10 +184,20 @@ User Stories
  - I can see performance time visualized in a scatterplot graph.
  - I can mouse over a plot to see a tooltip with additional details.
 
-## Zipline 18 - Heat Map (in progress)
+## Zipline 18 - Heat Map
 
 User Stories
 
  - I can view a heat map with data represented both on the Y and X axis.
  - Each cell is colored based its relationship to other data.
  - I can mouse over a cell in the heat map to get more exact information.
+
+## Zipline 19 - Force Directed Map
+
+User Stories
+
+ - I can see a Force-directed Graph that shows which campers are posting links on Camper News to which domains.
+ - I can see each camper's icon on their node.
+ - I can see the relationship between the campers and the domains they're posting.
+ - I can tell approximately many times campers have linked to a specific domain from it's node size.
+ - I can tell approximately how many times a specific camper has posted a link from their node's size.

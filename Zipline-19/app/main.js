@@ -109,7 +109,11 @@ angular.module('ForceApp', [])
         return 2 * d.count + 5;
       })
       .style('fill', function(d, i) {
-        return colors[d.count];
+        if(colors[d.count]) {
+          return colors[d.count];
+        } else {
+          return 'green';
+        }
       })
       .call(force.drag)
       .on('mouseover', tip.show)
