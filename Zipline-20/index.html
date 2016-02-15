@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MeteorApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Meteor Strikes</title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body ng-controller="MainController">
+  <h1>Meteor Strikes</h1>
+  <main>
+    <div id="key">
+      <ul>
+        <li class="key-box" ng-repeat="class in classes">
+          <div class="color-box" style="background-color: {{classColors[class]}}"></div>
+          <p class="box-label">{{class}}</p>
+        </li>
+      </ul>
+    </div>
+    <div id="chart"></div>
+  </main>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js'></script>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/0.2.16/d3.geo.projection.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js'></script>
+  <script src='app/main.js'></script>
+</body>
+</html>
