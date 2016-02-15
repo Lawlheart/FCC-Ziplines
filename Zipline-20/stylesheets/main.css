@@ -7,15 +7,15 @@ h1 {
 
 #chart {
   position: relative;
-  margin: 20px auto;
-  width: 960px; }
+  margin: 0 auto;
+  width: 96%; }
   #chart svg {
     background-color: #222;
-    border-radius: 300px; }
+    border-radius: 450px; }
 
 #key {
   width: 1000px;
-  margin: 10px auto;
+  margin: 8px auto;
   overflow: auto; }
   #key ul {
     overflow: auto;
@@ -37,6 +37,18 @@ h1 {
     height: 22px;
     padding: 2px;
     margin: 0; }
+  @media screen and (max-width: 1000px) {
+    #key {
+      width: 100%;
+      margin: 0;
+      text-align: center; }
+      #key .color-box {
+        width: 80%;
+        margin: 0 9%; }
+      #key ul {
+        padding: 0; }
+      #key .key-box {
+        width: 50%; } }
 
 .stroke {
   fill: none;

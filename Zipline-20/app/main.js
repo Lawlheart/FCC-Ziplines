@@ -98,11 +98,11 @@ angular.module('MeteorApp', [])
     "Unknown": "rgba(80, 80, 80, 0.6)"
   };
   
-  var width = 960,
-      height = 480;
+  var width = parseInt(d3.select('#chart').style('width'));
+  var height = width / 2;
 
   var projection = d3.geo.eckert3()
-    .scale(180)
+    .scale(width / 5.3)
     .translate([width / 2, height / 2])
     .precision(.1);
 
@@ -111,8 +111,6 @@ angular.module('MeteorApp', [])
     .scaleExtent([1, 10])
     .translate([0,0])
     .on("zoom", zoomed);
-
-
 
   var geoPath = d3.geo.path()
     .projection(projection)
@@ -159,7 +157,7 @@ angular.module('MeteorApp', [])
       var mass = element.properties.mass;
       return Math.sqrt(mass / Math.PI)});
 
-    var rScale = d3.scale.linear().range([2, 30]).domain(rDomain)
+    var rScale = d3.scale.linear().range([3, 45]).domain(rDomain)
 
 
     var tip = d3.tip()
@@ -170,7 +168,7 @@ angular.module('MeteorApp', [])
         var html = '<h4><span class="label">Name:</span> ' + d.properties.name + '</h4>';
         html += '<p><span class="label">Mass:</span> ' + d.properties.mass + ' kg</p>';
         html += '<p><span class="label">Class:</span> ' + d.properties.recclass + '</p>';
-        html += '<p><span class="label">Family:</span> ' + classify(d.properties.recclass) + '</p>';
+        html += '<p><span class="label">Class Group:</span> ' + classify(d.properties.recclass) + '</p>';
         html += '<p><span class="label">Date:</span> ' + date.toLocaleDateString() + '</p>';
         return html;
       });
@@ -190,7 +188,18 @@ angular.module('MeteorApp', [])
       .on('mouseenter', tip.show)
       .on('mouseleave', tip.hide)
 
+    d3.select(window).on('resize', function() {
+      width = parseInt(d3.select('#chart').style('width'));
+      height = width / 2;
 
+      rect.attr("width", width).attr("height", height)
+
+      projection.scale(width / 5.3).translate([width / 2, height / 2])
+
+      svg.attr({ width: width, height: height }).call(zoom);
+
+      rect.attr("width", width).attr("height", height)
+    })
 
     });
   });
