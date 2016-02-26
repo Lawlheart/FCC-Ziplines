@@ -1,10 +1,18 @@
 $(document).ready(function() { 
 
+var channelList = ["freecodecamp", "EtchTheSketch", "SoXvicious", "Dexteritybonus", "patrickrothfuss", "FeliciaDay", "ShaBooZey", "Monstercat", "TotalBiscuit", "Crendor", "comster404", "brunofin" ];
+var active;
+  
 Twitch.init({clientId: '7slve55bcpxq289sk8rojb2a491i1j6'}, function(error, status) {
-  console.log('the sdk is now loaded')
+  console.log('the sdk is now loaded ')
 });
 
-var channelList = ["monstercat","freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "comster404"]
+$.get('https://api.twitch.tv/kraken/streams?channel=' + channelList.join(','))
+  .success(function(data) {
+    active = data.streams.map(function(data) {
+      return data.channel.name;
+    });
+  });
 
 for(var i=0;i<channelList.length;i++) {
   var method = 'channels/' + channelList[i];
@@ -14,12 +22,12 @@ for(var i=0;i<channelList.length;i++) {
       $twitch.html('<div class="twitch" data-href="#"><img class="ch-icon" src="http://dev.lawlietblack.com/img/glitchyz.png"><h2 class="ch-title">Not Found<br><span class="ch-desc">' + error.message + '</span></h2><div class="ch-status null"><h1><i class="fa fa-times-circle"></i></h1></div></div>');
         $('#twitch-streams').append($twitch);
     } else {
-      renderChannel(list)
+      renderChannel(list, status)
     }
   });
 }
 
-function renderChannel(list) {
+function renderChannel(list, state) {
   var $twitch = $('<div>').addClass('twitch');
   var $icon = $('<img>').addClass('ch-icon');
   var $title = $('<h2>').addClass('ch-title');
@@ -30,13 +38,13 @@ function renderChannel(list) {
     $icon.attr('src', 'http://dev.lawlietblack.com/img/twitch-logo.png').appendTo($twitch);
   }
   var titleString = list.display_name;
-  if(list.delay !== null) {
+  if(list.status !== null) {
     titleString += "<br><span class='ch-desc'>";
     titleString += list.status + "</span>"
   }
   $title.html(titleString).appendTo($twitch);
 
-  if(list.delay !== null) {
+  if(active.indexOf(list.name) >= 0) {
     $twitch.addClass('online');
     $status.addClass('active').html('<h1><i class="fa fa-check-circle"></i></h1>').appendTo($twitch);
   } else {
@@ -50,21 +58,21 @@ function renderChannel(list) {
 $('body').on('click', '.twitch', function(event) {
   // console.log(event);
   var url = event.currentTarget.getAttribute('data-href');
-  window.location.href = url;
+  window.open(url);
 });
 $('body').on('click', '#all', function() {
   $('#search').val("");
-  $('.twitch').show();
+  $('.twitch').slideDown();
 });
 $('body').on('click', '#online', function() {
   $('#search').val("");
-  $('.twitch').hide();
-  $('.twitch.online').show();
+  $('.twitch:not(.online)').slideUp();
+  $('.twitch.online').slideDown();
 });
 $('body').on('click', '#offline', function() {
   $('#search').val("");
-  $('.twitch').hide();
-  $('.twitch.offline').show();
+  $('.twitch:not(.offline)').slideUp();
+  $('.twitch.offline').slideDown();
 });
 
 $('body').on('keyup', '#search', function() {
