@@ -45,8 +45,8 @@ angular.module('TicTacToeApp', [])
 		  	console.log("player chooses ", tile);
 				$('#' + tile).html('<span style="color:' + $scope.player.color + '">' + $scope.player.symbol + '</span>');
 				$scope.turn += 1;
-				$scope.winCheck()
-				if($scope.turn < 9) {
+				var check = $scope.winCheck()
+				if($scope.turn < 9 && check !== "Player Wins!") {
 					$scope.compTurn();
 				}
 			};
